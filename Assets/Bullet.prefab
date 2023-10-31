@@ -147,9 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 3
+  damage: 20
   shootableLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4352
   passiveLayer:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 0

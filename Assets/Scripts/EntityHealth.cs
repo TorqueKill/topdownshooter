@@ -11,14 +11,28 @@ public class EntityHealth : MonoBehaviour
 
     public Image healthBar;
 
-    private void Update()
+
+    new public string tag;
+
+    void Start()
+    {
+        tag = gameObject.transform.parent.gameObject.tag;
+    }
+
+    void Update()
     {
         if (health <= 0)
         {
             if (healthBar != null){
                 healthBar.fillAmount = health / maxHealth;
             }
-            Destroy(gameObject);
+            //destroy parent object
+            Destroy(gameObject.transform.parent.gameObject);
+            //add kill to player
+            //only add kill if enemy
+            if (tag == "ENEMY"){
+                GameObject.Find("Player").GetComponent<PlayerStats>().kills += 1;
+            }
         }else {
             if (healthBar != null){
                 healthBar.fillAmount = health / maxHealth;

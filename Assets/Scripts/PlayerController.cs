@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public float turnSpeed = 10;
     public float runSpeed = 10;
 
+    public float rotateSpeed = 10;
+
     public float dashDistance = 5;
 
     public bool mouseKeyboardControl = false;
@@ -25,7 +27,8 @@ public class PlayerController : MonoBehaviour
     public string meleeWeapon = "Knife";
 
 
-
+    public KeyCode RotateLeft = KeyCode.Q;
+    public KeyCode RotateRight = KeyCode.E;
 
 
 
@@ -33,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private bool _canKnife = true;
     private Quaternion _targetRotation;
     private Vector3 _direction;
+    private Vector3 _lookingDirection;
     private CharacterController _controller;
     private Camera cam;
 
@@ -61,7 +65,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            WASD();
+            lookWithAltKeys();
         }
 
         //check if player can knife using leftcontrol
@@ -156,6 +160,38 @@ public class PlayerController : MonoBehaviour
             // transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, Time.deltaTime * turnSpeed);
         }
 
+
+    }
+
+    void lookWithAltKeys(){
+        // get input from the player
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        //move the player
+        _direction = new Vector3(horizontalInput, 0, verticalInput);
+        //run or walk based on shift key
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            _controller.Move(_direction * runSpeed * Time.deltaTime);
+        }
+        else
+        {
+            _controller.Move(_direction * speed * Time.deltaTime);
+        }
+
+        //rotate the player
+        if (Input.GetKey(RotateLeft))
+        {
+            transform.Rotate(Vector3.down * rotateSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(RotateRight))
+        {
+            transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
+        }
+
+
+      
 
     }
 

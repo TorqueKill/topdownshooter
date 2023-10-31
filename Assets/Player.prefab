@@ -1,5 +1,91 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &278880148001528792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3909801020160535103}
+  - component: {fileID: 6974842683673222509}
+  - component: {fileID: 5282316956029809996}
+  - component: {fileID: 7433737058468094341}
+  m_Layer: 7
+  m_Name: HurtBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3909801020160535103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278880148001528792}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 583604919882355511}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6974842683673222509
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278880148001528792}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5282316956029809996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278880148001528792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e4064fe4ab8a34f8071d70c0f358ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  healthRegen: 0
+  healthBar: {fileID: 0}
+  tag: 
+--- !u!114 &7433737058468094341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278880148001528792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8665c75981dbcd34eb8279faa48288f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityHealth: {fileID: 0}
+  entityRigidbody: {fileID: 0}
 --- !u!1 &3293161688255979833
 GameObject:
   m_ObjectHideFlags: 0
@@ -20,7 +106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2350245703521208441
 Transform:
   m_ObjectHideFlags: 0
@@ -148,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1c7726f8ccaed498e9ae6096aeb744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerSecond: 50
+  damagePerSecond: 1000
   knockbackPerSecond: 50
   layerMask:
     serializedVersion: 2
@@ -167,8 +253,7 @@ GameObject:
   - component: {fileID: 8557765792299335427}
   - component: {fileID: 253792116472881989}
   - component: {fileID: 4166899651872782521}
-  - component: {fileID: 4828151075811758660}
-  - component: {fileID: 3344112129944963937}
+  - component: {fileID: 7837546113593132032}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -191,6 +276,7 @@ Transform:
   m_Children:
   - {fileID: 7619735124704184199}
   - {fileID: 2350245703521208441}
+  - {fileID: 3909801020160535103}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2568288145602458469
@@ -305,12 +391,15 @@ MonoBehaviour:
   speed: 5
   turnSpeed: 10
   runSpeed: 10
+  rotateSpeed: 200
   dashDistance: 5
   mouseKeyboardControl: 1
   knifeCooldown: 0.5
   dashCooldown: 2
   meleeWeapon: Knife
---- !u!114 &4828151075811758660
+  RotateLeft: 107
+  RotateRight: 108
+--- !u!114 &7837546113593132032
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -319,24 +408,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4217475974729421007}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6e4064fe4ab8a34f8071d70c0f358ba, type: 3}
+  m_Script: {fileID: 11500000, guid: db689e7465903a244b03b91298ede575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
---- !u!114 &3344112129944963937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4217475974729421007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8665c75981dbcd34eb8279faa48288f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entityHealth: {fileID: 0}
-  entityRigidbody: {fileID: 0}
+  Kills: {fileID: 0}
+  kills: 0
 --- !u!1 &4247536281733936349
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,8 +512,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 1195452668530659768}
   bulletPrefab: {fileID: 8838584364103230957, guid: 0019dd0df70db404fb8a3af33cd0ddae, type: 3}
-  bulletSpeed: 10
-  shootButton: 323
+  bulletSpeed: 100
+  shootRate: 5
+  level2Kills: 20
+  level3Kills: 50
+  spreadAngle: 12
+  shootButton: 32
+  shootButton2: 323
 --- !u!1 &4614049979858084332
 GameObject:
   m_ObjectHideFlags: 0

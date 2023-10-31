@@ -8,10 +8,12 @@ public class Enemy1 : MonoBehaviour
     public LayerMask collisionLayer;
     public float speed;
 
+
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.Find("Player").transform;
+
     }
 
     // Update is called once per frame
