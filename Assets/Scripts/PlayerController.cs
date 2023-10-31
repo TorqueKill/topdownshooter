@@ -31,19 +31,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //WASD();
-        mouseKeyboard();
+        WASD();
+        //mouseKeyboard();
     }
 
     //create a method for WASD
     void WASD()
     {
-                    
+
         // get input from the player
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        
-        
+
+
 
 
         // move the player
@@ -69,7 +69,8 @@ public class PlayerController : MonoBehaviour
 
 
     //create a method for mouse and keyboard
-    void mouseKeyboard(){
+    void mouseKeyboard()
+    {
         // get input from the player
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
@@ -78,8 +79,8 @@ public class PlayerController : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         //get world pos
         Vector3 worldPos = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.transform.position.y - transform.position.y));
-        
-        
+
+
         // move the player
         Vector3 direction = new Vector3(horizontalInput, 0, verticalInput);
 
@@ -107,9 +108,12 @@ public class PlayerController : MonoBehaviour
             // _targetRotation = Quaternion.LookRotation(direction);
             // transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, Time.deltaTime * turnSpeed);
         }
-        
+
 
     }
+
+
+    
 
 
 }
