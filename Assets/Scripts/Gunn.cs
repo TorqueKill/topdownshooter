@@ -8,9 +8,12 @@ public class Gunn : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletSpeed = 10;
 
+    //choose shooting button
+    public KeyCode shootButton = KeyCode.Space;
+
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(shootButton))
         {
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;

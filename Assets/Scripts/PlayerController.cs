@@ -15,9 +15,23 @@ public class PlayerController : MonoBehaviour
     public float turnSpeed = 10;
     public float runSpeed = 10;
 
+    public float dashDistance = 5;
+
+    public bool mouseKeyboardControl = false;
+
+    public float knifeCooldown = 1f;
+    public float dashCooldown = 1f;
+
+    public string meleeWeapon = "Knife";
 
 
+
+
+
+    private bool _canDash = true;
+    private bool _canKnife = true;
     private Quaternion _targetRotation;
+    private Vector3 _direction;
     private CharacterController _controller;
     private Camera cam;
 
@@ -31,8 +45,37 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WASD();
-        //mouseKeyboard();
+        //check if player is deleted
+        if (gameObject == null)
+        {
+            //stop update
+            return;
+        }
+
+        //check if mouse and keyboard control is true
+        if (mouseKeyboardControl)
+        {
+            mouseKeyboard();
+        }
+        else
+        {
+            WASD();
+        }
+
+        //check if player can knife using leftcontrol
+        if (Input.GetKeyDown(KeyCode.LeftControl) && _canKnife)
+        {
+            //activate knife
+            knife();
+
+        }
+
+        //check if player can dash using rightclick
+        if (Input.GetKeyDown(KeyCode.Mouse1) && _canDash)
+        {
+            //activate dash
+            dash();
+        }
     }
 
     //create a method for WASD
@@ -47,21 +90,21 @@ public class PlayerController : MonoBehaviour
 
 
         // move the player
-        Vector3 direction = new Vector3(horizontalInput, 0, verticalInput);
+        _direction = new Vector3(horizontalInput, 0, verticalInput);
         //run or walk based on shift key
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            _controller.Move(direction * runSpeed * Time.deltaTime);
+            _controller.Move(_direction * runSpeed * Time.deltaTime);
         }
         else
         {
-            _controller.Move(direction * speed * Time.deltaTime);
+            _controller.Move(_direction * speed * Time.deltaTime);
         }
 
         // rotate the player
-        if (direction.magnitude > 0)
+        if (_direction.magnitude > 0)
         {
-            _targetRotation = Quaternion.LookRotation(direction);
+            _targetRotation = Quaternion.LookRotation(_direction);
             transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, Time.deltaTime * turnSpeed);
         }
     }
@@ -82,34 +125,86 @@ public class PlayerController : MonoBehaviour
 
 
         // move the player
-        Vector3 direction = new Vector3(horizontalInput, 0, verticalInput);
+        _direction = new Vector3(horizontalInput, 0, verticalInput);
 
         //run or walk based on shift key
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            _controller.Move(direction * runSpeed * Time.deltaTime);
+            _controller.Move(_direction * runSpeed * Time.deltaTime);
         }
         else
         {
-            _controller.Move(direction * speed * Time.deltaTime);
+            _controller.Move(_direction * speed * Time.deltaTime);
         }
 
         // rotate the player
 
-        if (direction.magnitude > 0)
+        if (_direction.magnitude > 0)
         {
             transform.LookAt(worldPos);
-            _targetRotation = Quaternion.LookRotation(direction);
+            _targetRotation = Quaternion.LookRotation(_direction);
             transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, Time.deltaTime * turnSpeed);
         }
         else
         {
             transform.LookAt(worldPos);
-            // _targetRotation = Quaternion.LookRotation(direction);
+            // _targetRotation = Quaternion.LookRotation(_direction);
             // transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, Time.deltaTime * turnSpeed);
         }
 
 
+    }
+
+    //create a method for knife
+    void knife()
+    {
+        //check if player can knife
+        if (_canKnife)
+        {
+            //activate knife child component named meleeWeapon
+            transform.Find(meleeWeapon).gameObject.SetActive(true);
+            //start cooldown
+            StartCoroutine(knifeCooldownTimer());
+            //set can knife to false
+            _canKnife = false;
+        }
+    }
+
+    //create a method for knife cooldown
+    IEnumerator knifeCooldownTimer()
+    {
+        //wait for knife cooldown
+        yield return new WaitForSeconds(knifeCooldown);
+        //set can knife to true
+        _canKnife = true;
+        //deactivate knife child component named meleeWeapon
+        transform.Find(meleeWeapon).gameObject.SetActive(false);
+    }
+
+
+    //create a method for dash
+    void dash()
+    {
+        //check if player can dash
+        if (_canDash)
+        {
+            //move player
+            _controller.Move(_direction * dashDistance );
+
+            //start cooldown
+            StartCoroutine(dashCooldownTimer());
+            //set can dash to false
+            _canDash = false;
+        }
+    }
+
+    //create a method for dash cooldown
+    IEnumerator dashCooldownTimer()
+    {
+        //wait for dash cooldown
+        yield return new WaitForSeconds(dashCooldown);
+        //set can dash to true
+        _canDash = true;
     }
 
 
@@ -117,3 +212,4 @@ public class PlayerController : MonoBehaviour
 
 
 }
+

@@ -18,6 +18,12 @@ public class GameCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //check if player is deleted
+        if (target == null)
+        {
+            //stop update
+            return;
+        }
         cameraTarget = new Vector3(target.position.x, transform.position.y, target.position.z);
         transform.position = Vector3.Lerp(transform.position, cameraTarget, Time.deltaTime * 8);
 

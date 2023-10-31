@@ -17,6 +17,15 @@ public class Enemy1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //check if player is deleted
+        if (target == null)
+        {
+            //stop update
+            return;
+        }
+
+
         // Calculate the direction to the player
         Vector3 direction = target.position - transform.position;
 
