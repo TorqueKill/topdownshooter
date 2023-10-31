@@ -28,12 +28,14 @@ public class PlayerController : MonoBehaviour
 
 
 
+
     private bool _canDash = true;
     private bool _canKnife = true;
     private Quaternion _targetRotation;
     private Vector3 _direction;
     private CharacterController _controller;
     private Camera cam;
+
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +78,8 @@ public class PlayerController : MonoBehaviour
             //activate dash
             dash();
         }
+
+
     }
 
     //create a method for WASD
