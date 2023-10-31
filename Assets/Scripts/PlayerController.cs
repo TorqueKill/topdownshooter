@@ -31,8 +31,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //WASD();
-        mouseKeyboard();
+        WASD();
+        //mouseKeyboard();
     }
 
     //create a method for WASD
@@ -111,4 +111,9 @@ public class PlayerController : MonoBehaviour
 
 
     }
+
+
+    
+
+
 }

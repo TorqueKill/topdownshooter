@@ -11,14 +11,14 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Impassable
+  - Player
+  - Enemy
+  - Interactable
+  - Action
+  - Event
+  - Barriers
+  - Player Damage
   - 
   - 
   - 
