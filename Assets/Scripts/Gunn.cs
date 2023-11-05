@@ -86,6 +86,8 @@ public class Gunn : MonoBehaviour
 
         var bullet3 = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.Euler(0, -spreadAngle, 0) * bulletSpawnPoint.rotation);
         bullet3.GetComponent<Rigidbody>().velocity = bullet3.transform.forward * bulletSpeed;
+
+        PlayAudio();
     }
 
     void Shoot3()
@@ -98,6 +100,8 @@ public class Gunn : MonoBehaviour
 
         var bullet5 = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.Euler(0, -spreadAngle * 2, 0) * bulletSpawnPoint.rotation);
         bullet5.GetComponent<Rigidbody>().velocity = bullet5.transform.forward * bulletSpeed;
+
+        PlayAudio();
     }
 
     public void PlayAudio()
