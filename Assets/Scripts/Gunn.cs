@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Gunn : MonoBehaviour
@@ -21,6 +22,9 @@ public class Gunn : MonoBehaviour
 
     private float shootDelta;
     private float shootInterval;
+
+    public AudioSource audioName;
+
 
     void Start()
     {
@@ -68,6 +72,8 @@ public class Gunn : MonoBehaviour
     {
         var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
         bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+        PlayAudio();
+
     }
 
     void Shoot2()
@@ -92,5 +98,13 @@ public class Gunn : MonoBehaviour
 
         var bullet5 = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.Euler(0, -spreadAngle * 2, 0) * bulletSpawnPoint.rotation);
         bullet5.GetComponent<Rigidbody>().velocity = bullet5.transform.forward * bulletSpeed;
+    }
+
+    public void PlayAudio()
+    {
+        if (audioName != null)
+        {
+            audioName.Play();
+        }
     }
 }
