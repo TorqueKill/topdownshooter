@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gunn : MonoBehaviour
 {
@@ -15,14 +16,20 @@ public class Gunn : MonoBehaviour
 
     public float spreadAngle = 45f;
 
-    private int level = 1;
-
     public KeyCode shootButton = KeyCode.Space;
     public KeyCode shootButton2 = KeyCode.Mouse0;
 
     private float shootDelta;
     private float shootInterval;
 
+    private float textLife = 1f;
+
+    private bool upgrade1 = false;
+    private bool upgrade2 = false;
+
+    private float textDelta;
+
+    public Text text;
     public AudioSource audioName;
 
 
@@ -30,18 +37,15 @@ public class Gunn : MonoBehaviour
     {
         shootInterval = 1f / shootRate;
         shootDelta = shootInterval;
+
+        text.text = "";
     }
 
     void Update()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerStats>().kills > level3Kills)
-        {
-            level = 3;
-        }
-        else if (GameObject.Find("Player").GetComponent<PlayerStats>().kills > level2Kills)
-        {
-            level = 2;
-        }
+        Upgrade();
+
+        displayText();
 
         if (shootDelta < shootInterval)
         {
@@ -51,17 +55,17 @@ public class Gunn : MonoBehaviour
         {
             if (Input.GetKey(shootButton) || Input.GetKey(shootButton2))
             {
-                if (level == 1)
+                if (upgrade2)
                 {
-                    Shoot1();
+                    Shoot3();
                 }
-                else if (level == 2)
+                else if (upgrade1)
                 {
                     Shoot2();
                 }
-                else if (level == 3)
+                else
                 {
-                    Shoot3();
+                    Shoot1();
                 }
             }
             shootDelta = 0;
@@ -109,6 +113,36 @@ public class Gunn : MonoBehaviour
         if (audioName != null)
         {
             audioName.Play();
+        }
+    }
+
+    void Upgrade(){
+        if (!upgrade1){
+            if (GameObject.Find("Player").GetComponent<PlayerStats>().kills > level2Kills){
+                upgrade1 = true;
+                text.text = "Gun Upgraded: extra bullets";
+                textDelta = 0;
+            }
+        }
+        else if (!upgrade2){
+            if (GameObject.Find("Player").GetComponent<PlayerStats>().kills > level3Kills){
+                upgrade2 = true;
+                text.text = "Gun Upgraded: extra bullets";
+                textDelta = 0;
+            }
+        }     
+
+    }
+
+    void displayText()
+    {
+        if (textDelta < textLife)
+        {
+            textDelta += Time.deltaTime;
+        }
+        else
+        {
+            text.text = "";
         }
     }
 }
