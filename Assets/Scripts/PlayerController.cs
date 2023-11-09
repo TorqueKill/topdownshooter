@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
 
     public string meleeWeapon = "Knife";
 
+    
+
 
     public KeyCode RotateLeft = KeyCode.Q;
     public KeyCode RotateRight = KeyCode.E;
@@ -41,11 +43,29 @@ public class PlayerController : MonoBehaviour
     private Camera cam;
 
 
+    private bool weapon1 = true;
+    private bool weapon2 = false;
+   // private bool weapon3 = false;
+
+
+    private GameObject weapon1Object;
+
+    private GameObject weapon2Object;
+
+    //private GameObject weapon3Object;
+
+
     // Start is called before the first frame update
     void Start()
     {
         _controller = GetComponent<CharacterController>();
         cam = Camera.main;
+
+        //weapon1 should be child of hand which is child of player
+        weapon1Object = transform.Find("Hand").Find("Rifle").gameObject;
+
+        //weapon2 should be child of hand which is child of player
+        weapon2Object = transform.Find("Hand").Find("Rocket Launcher").gameObject;
     }
 
     // Update is called once per frame
@@ -82,6 +102,12 @@ public class PlayerController : MonoBehaviour
             //activate dash
             dash();
         }
+
+        //check if player can switch weapons
+        weaponSwitchCheck();
+
+        //switch weapons
+        switchWeapons();
 
 
     }
@@ -246,6 +272,57 @@ public class PlayerController : MonoBehaviour
         //set can dash to true
         _canDash = true;
     }
+
+
+    void weaponSwitchCheck(){
+
+        // if 1 is pressed, set weapon1 to true and weapon2 and weapon3 to false
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            weapon1 = true;
+            weapon2 = false;
+            //weapon3 = false;
+        }
+        // if 2 is pressed, set weapon2 to true and weapon1 and weapon3 to false
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            weapon1 = false;
+            weapon2 = true;
+            //weapon3 = false;
+        }
+        // if 3 is pressed, set weapon3 to true and weapon1 and weapon2 to false
+        // if (Input.GetKeyDown(KeyCode.Alpha3))
+        // {
+        //     weapon1 = false;
+        //     weapon2 = false;
+        //     weapon3 = true;
+        // }
+
+    }
+
+
+    void switchWeapons(){
+        if (weapon1)
+        {
+            weapon1Object.SetActive(true);
+            weapon2Object.SetActive(false);
+            //weapon3Object.SetActive(false);
+        }
+        else if (weapon2)
+        {
+            weapon1Object.SetActive(false);
+            weapon2Object.SetActive(true);
+            //weapon3Object.SetActive(false);
+        }
+        // else if (weapon3)
+        // {
+        //     weapon1Object.SetActive(false);
+        //     weapon2Object.SetActive(false);
+        //     weapon3Object.SetActive(true);
+        // }
+    }
+
+
 
 
     
