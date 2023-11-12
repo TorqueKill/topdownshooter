@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1c7726f8ccaed498e9ae6096aeb744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerSecond: 10000
+  damagePerSecond: 1000
   knockbackPerSecond: 10
   layerMask:
     serializedVersion: 2
