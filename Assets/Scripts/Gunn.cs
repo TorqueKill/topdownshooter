@@ -38,7 +38,8 @@ public class Gunn : MonoBehaviour
         shootInterval = 1f / shootRate;
         shootDelta = shootInterval;
 
-        text.text = "";
+        //try to find text component
+        text = GameObject.Find("levelText").GetComponent<Text>();
     }
 
     void Update()

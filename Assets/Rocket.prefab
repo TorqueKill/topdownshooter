@@ -153,10 +153,10 @@ MonoBehaviour:
   blastDuration: 0.5
   shootableLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4352
   passiveLayer:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 0
 --- !u!1 &8482942698005760759
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ MonoBehaviour:
   knockbackPerSecond: 10
   layerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4352
 --- !u!1 &9117021443071649670
 GameObject:
   m_ObjectHideFlags: 0

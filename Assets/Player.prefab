@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 7837546113593132032}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -756,6 +756,7 @@ MonoBehaviour:
   spreadAngle: 12
   shootButton: 32
   shootButton2: 323
+  text: {fileID: 0}
   audioName: {fileID: 229265691406076349}
 --- !u!82 &229265691406076349
 AudioSource:

@@ -177,6 +177,7 @@ MonoBehaviour:
   maxHealth: 50
   healthRegen: 0
   healthBar: {fileID: 0}
+  tag: 
 --- !u!114 &2355912518105961331
 MonoBehaviour:
   m_ObjectHideFlags: 0

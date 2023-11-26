@@ -13,13 +13,27 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //set text to 0
-        Kills.text = "Kills: " + kills.ToString();
+        //first find the text component
+        Kills = GameObject.Find("Kills").GetComponent<Text>();
+
+        if (Kills == null)
+        {
+            Debug.Log("Could not find Kills text component");
+        }else{
+
+            //set text to 0
+            Kills.text = "Kills: " + kills.ToString();
+
+        }
     }
 
     void Update()
     {
-        //update text
-        Kills.text = "Kills: " + kills.ToString();
+        if (Kills != null)
+        {
+            //set text to 0
+            Kills.text = "Kills: " + kills.ToString();
+
+        }
     }
 }

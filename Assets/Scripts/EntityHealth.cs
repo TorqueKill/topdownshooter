@@ -17,6 +17,11 @@ public class EntityHealth : MonoBehaviour
     void Start()
     {
         tag = gameObject.transform.parent.gameObject.tag;
+
+        //try to find health bar only if its a player
+        if (tag == "Player"){
+            healthBar = GameObject.Find("green").GetComponent<Image>();
+        }
     }
 
     void Update()
