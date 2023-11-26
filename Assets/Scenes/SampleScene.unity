@@ -1997,6 +1997,23 @@ MonoBehaviour:
   perpDirRotated: {x: 0.6099168, y: 0, z: 0.7924654}
   markerStartUVY: 0.49187613
   customPoints: []
+--- !u!114 &175154818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 561528938, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadScr: {fileID: 1015394975}
+  prefabScr: {fileID: 0}
+  markers: 00000000
+  startEnd: 0
+  prefab: {fileID: 0}
 --- !u!1001 &178006744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12879,7 +12896,7 @@ MonoBehaviour:
   angleThresholdFlag: 0
   closedTrack: 0
   minNodeDistance: 5
-  nodeWithinRange: 5
+  nodeWithinRange: 3
   uvTiling: 1
   planarUVs: 0
   flipNormals: 0
@@ -16250,7 +16267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: efbc7fb2513d6744ab1bcfac40f0823d, type: 3}
       propertyPath: newRoadFlag
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: efbc7fb2513d6744ab1bcfac40f0823d, type: 3}
       propertyPath: roadUpdated
@@ -16278,7 +16295,7 @@ PrefabInstance:
       objectReference: {fileID: 2038105227}
     - target: {fileID: 11400000, guid: efbc7fb2513d6744ab1bcfac40f0823d, type: 3}
       propertyPath: handleSelection
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: efbc7fb2513d6744ab1bcfac40f0823d, type: 3}
       propertyPath: plusSignTexture
@@ -16338,7 +16355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: efbc7fb2513d6744ab1bcfac40f0823d, type: 3}
       propertyPath: selectedNewRoadType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: efbc7fb2513d6744ab1bcfac40f0823d, type: 3}
       propertyPath: terrainDetailSplatX
@@ -16403,7 +16420,7 @@ PrefabInstance:
     - target: {fileID: 11400000, guid: efbc7fb2513d6744ab1bcfac40f0823d, type: 3}
       propertyPath: selectedObjects.Array.data[0]
       value: 
-      objectReference: {fileID: 1190418854}
+      objectReference: {fileID: 175154818}
     - target: {fileID: 11400000, guid: efbc7fb2513d6744ab1bcfac40f0823d, type: 3}
       propertyPath: connectionMaterials.Array.size
       value: 1
@@ -16613,9 +16630,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 400000, guid: efbc7fb2513d6744ab1bcfac40f0823d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 239117024}
-    - targetCorrespondingSourceObject: {fileID: 400000, guid: efbc7fb2513d6744ab1bcfac40f0823d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1930400200}
     - targetCorrespondingSourceObject: {fileID: 400000, guid: efbc7fb2513d6744ab1bcfac40f0823d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1015394971}
@@ -17069,169 +17083,11 @@ MonoBehaviour:
   perpDirRotated: {x: 0.108573586, y: 0, z: -0.9940884}
   markerStartUVY: 0.18811035
   customPoints: []
---- !u!114 &1190418854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 561528938, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roadScr: {fileID: 1015394975}
-  prefabScr: {fileID: 0}
-  markers: 07000000
-  startEnd: 0
-  prefab: {fileID: 0}
---- !u!1 &1195179870
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1195179874}
-  - component: {fileID: 1195179873}
-  - component: {fileID: 1195179872}
-  - component: {fileID: 1195179871}
-  - component: {fileID: 1195179875}
-  m_Layer: 6
-  m_Name: Ground
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!64 &1195179871
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195179870}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1195179872
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195179870}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: c4468fb58dc9858488b84087df40b102, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1195179873
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195179870}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1195179874
+--- !u!4 &1195179874 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5898760594836666042, guid: 853c80d1a9a4b8642b5f35ac91e3908f, type: 3}
+  m_PrefabInstance: {fileID: 6557656416802814840}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195179870}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.259, y: 14.28, z: 0.24678}
-  m_LocalScale: {x: 25.695, y: 1, z: 23.598999}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2093014594}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!218 &1195179875
-Terrain:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195179870}
-  m_Enabled: 1
-  serializedVersion: 6
-  m_TerrainData: {fileID: 0}
-  m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 5
-  m_SplatMapDistance: 1000
-  m_HeightmapMaximumLOD: 0
-  m_ShadowCastingMode: 2
-  m_DrawHeightmap: 1
-  m_DrawInstanced: 0
-  m_DrawTreesAndFoliage: 1
-  m_StaticShadowCaster: 0
-  m_IgnoreQualitySettings: 0
-  m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 0}
-  m_BakeLightProbesForTrees: 1
-  m_PreserveTreePrototypeLayers: 0
-  m_DeringLightProbesForTrees: 1
-  m_ReceiveGI: 1
-  m_ScaleInLightmap: 1
-  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
-  m_GroupingID: 0
-  m_RenderingLayerMask: 1
-  m_AllowAutoConnect: 0
-  m_EnableHeightmapRayTracing: 1
-  m_EnableTreesAndDetailsRayTracing: 0
-  m_TreeMotionVectorModeOverride: 3
 --- !u!1001 &1196049185
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17467,171 +17323,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41a9e4f2924047e498f822fc54a2e08f, type: 3}
---- !u!43 &1247615221
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 11
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 0
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 0
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 0
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 0
-    _typelessdata: 
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  m_MeshUsageFlags: 0
-  m_CookingOptions: 30
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1001 &1251448634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21775,527 +21466,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3055697113761510439, guid: 01dbe5873f55d8749acdd88e7ede3396, type: 3}
   m_PrefabInstance: {fileID: 1926456638}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1930400199
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1930400200}
-  - component: {fileID: 1930400204}
-  - component: {fileID: 1930400203}
-  - component: {fileID: 1930400202}
-  - component: {fileID: 1930400201}
-  m_Layer: 0
-  m_Name: road_0001
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!4 &1930400200
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930400199}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1112022316}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1930400201
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930400199}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1247615221}
---- !u!23 &1930400202
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930400199}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1930400203
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930400199}
-  m_Mesh: {fileID: 1247615221}
---- !u!114 &1930400204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930400199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -216737829, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseScript: {fileID: 0}
-  roadName: road_0001
-  locked: 0
-  roadType: 0
-  rt:
-    roadTypeName: 
-    id: 0
-    timestamp: 0
-    roadWidth: 0
-    faceDistance: 0
-    angleTreshold: 0
-    uvTiling: 0
-    uv4Type: 0
-    type: 0
-    detailDistance: 0
-    planarUVs: 0
-    outerIndent: 0
-    roadShapeDataActive: 0
-    roadShapeData:
-      nodes: []
-      hardEdge: 
-      priorityNodeIndexLeft: 0
-      priorityNodeIndexRight: 0
-      nodesV3: []
-      lanes: []
-      leftLanes: 0
-      rightLanes: 0
-      symmetrical: 0
-      leftSidewalkOffset: 0
-      rightSidewalkOffset: 0
-      outerLaneMarkingLeftIndex: 0
-      includeOuterlaneLeftInShape: 0
-      includeOuterlaneRightInShape: 0
-      outerLaneMarkingRightIndex: 0
-      outerOuterLaneMarkingLeftIndex: 0
-      outerOuterLaneMarkingRightIndex: 0
-      selectedNode: 0
-      selectedLaneNode: 0
-      isSymmetrical: 0
-      isset: 0
-    minSpeed: 0
-    maxSpeed: 0
-    speedLimit: 0
-    roadShape: []
-    roadShapeExt: []
-    roadShapeExt2: []
-    doConnectionTri: 
-    doConnectionTriExt: 
-    roadShapeUVs: []
-    roadShapeExtUVs: []
-    roadShapeExtUVs2: []
-    roadShapeUVs2: []
-    preserveUVs: 0
-    hardEdge: 
-    roadShapeVecsString: 
-    defaultSidewalk: 0
-    sidewalks: 0
-    sidewalkHeight: 0
-    sidewalkWidth: 0
-    crosswalks: 0
-    crosswalkIntervals: 0
-    crosswalksIntersections: 0
-    crosswalkPrefab: {fileID: 0}
-    crosswalkHeightOffset: 0
-    crosswalkType: 0
-    roadMaterial: {fileID: 0}
-    roadMaterials: []
-    roadPhysicsMaterial: {fileID: 0}
-    roadPhysicsMaterials: []
-    connectionMaterial: {fileID: 0}
-    isSideObject: 0
-    isCustomRoad: 0
-    subSegments: 0
-    soData: []
-    soDataExt: []
-    soDataLog: []
-    layer: 0
-    isStatic: 0
-    tag: 
-    splatMapActive: 0
-    splatIndex: 0
-    expandLevel: 0
-    smoothLevel: 0
-    splatOpacity: 0
-    followTerrainContours: 0
-    terrainContoursOffset: 0
-    terrainDeformation: 0
-    defaultIndent: 0
-    defaultSurrounding: 0
-    castShadow: 0
-    randomnessFlag: 0
-    randomYPosition: 0
-    randomMinYPosition: 0
-    randomMaxYPosition: 0
-    minRandomYPositionDistance: 0
-    maxRandomYPositionDistance: 0
-    randomMinRotation: 0
-    randomMaxRotation: 0
-    minRandomRotationDistance: 0
-    maxRandomRotationDistance: 0
-    vegetationStudioMaskLineActive: 0
-    vegetationStudioGrassPerimeter: 0
-    vegetationStudioPlantPerimeter: 0
-    vegetationStudioTreePerimeter: 0
-    vegetationStudioObjectPerimeter: 0
-    vegetationStudioLargeObjectPerimeter: 0
-    vegetationStudioBiomeMaskActive: 0
-    vegetationStudioBiomeMaskDistance: 0
-    vegetationStudioBiomeMaskBlendDistance: 0
-    vegetationStudioBiomeMaskNoiseScale: 0
-    decalPresets: []
-    decalClassPresets: []
-    defaultRamp: 0
-    extrusionType: 0
-    extrusionDistance: 0
-    fixedDistance: 0
-    connectionAngle: 0
-    connectionRadius: 0
-    oneWay: 0
-    cornerRadiusMainRoad: 0
-    cornerSementsMainRoad: 0
-    cornerRadiusSecondaryRoad: 0
-    cornerRadiusSecondaryCurvature: 0
-    cornerSementsSecondaryRoad: 0
-    mainRoadsOnly: 0
-    isRoadShape: 0
-    controlType: 0
-    vertexColor: {r: 0, g: 0, b: 0, a: 0}
-    trafficPosts: []
-    activeTrafficPostIndex: 0
-    showTrafficPosts: 0
-  defaultControlType: 0
-  isCustomRoadSet: 0
-  isCustomRoad: 0
-  markers: []
-  tmpMarkers: []
-  markersExt: []
-  tmpMarkersExt: []
-  tValues: []
-  roadWidth: 5
-  faceDistance: 2
-  angleTreshold: 45
-  resolutionFlag: 0
-  angleThresholdFlag: 0
-  closedTrack: 0
-  minNodeDistance: 5
-  nodeWithinRange: -1
-  uvTiling: 1
-  planarUVs: 0
-  flipNormals: 0
-  vertexColor: {r: 0, g: 0, b: 0, a: 0}
-  defaultLeftSidewalk: 0
-  defaultRightSidewalk: 0
-  defaultLeftSidewalkid: 0
-  defaultRightSidewalkid: 0
-  leftSidewalkActive: 0
-  rightSidewalkActive: 0
-  leftSidewalks: []
-  rightSidewalks: []
-  crosswalkObjects: []
-  crosswalkDistances: []
-  exitRoads: []
-  selectedExit: 0
-  randomnessFlag: 0
-  randomnessMarkerFlag: 0
-  randomYPosition: 0
-  randomMinYPosition: 0
-  randomMaxYPosition: 0
-  minRandomYPositionDistance: 0
-  maxRandomYPositionDistance: 0
-  randomMinRotation: 0
-  randomMaxRotation: 0
-  minRandomRotationDistance: 0
-  maxRandomRotationDistance: 0
-  vegetationStudioMaskLineActive: 1
-  vegetationStudioGrassPerimeter: 2
-  vegetationStudioPlantPerimeter: 3
-  vegetationStudioTreePerimeter: 4
-  vegetationStudioObjectPerimeter: 3
-  vegetationStudioLargeObjectPerimeter: 4
-  vegetationStudioBiomeMaskActive: 0
-  vegetationStudioBiomeMaskDistance: 0
-  vegetationStudioBiomeMaskBlendDistance: 0
-  vegetationStudioBiomeMaskNoiseScale: 0
-  vertsStats: 0
-  trisStats: 0
-  indent: 2
-  surrounding: 2
-  followTerrainContours: 0
-  terrainContoursOffset: 5
-  roadShape:
-  - {x: 2.5, y: 0}
-  - {x: -2.5, y: 0}
-  roadShapeIntsStart: 
-  roadShapeIntsEnd: 
-  roadShapeIntsStartFull: 
-  roadShapeIntsEndFull: 
-  roadShapeString: 
-  roadShapeReversedString: 
-  roadShapeMatchCount: 0
-  geoReversed: -1
-  roadShapeCols: 0
-  flipRoadUVs: 0
-  subSegments: 1
-  nodeDistance: []
-  roadShapeUVs:
-  - 0
-  - 1
-  roadShapeUVs2:
-  - 0
-  - 1
-  doConnectionTri: 0101
-  randomRotations: []
-  hardEdge: 0000
-  roadShapeMaterialInts: 
-  subMeshCount: 1
-  roadShapeMaterialIntCounts: 
-  controlPoints: []
-  splinePoints: []
-  distances: []
-  markerInts: 
-  insertSplinePoints: []
-  soSplinePoints: []
-  soSplinePointsLeft: []
-  soSplinePointsRight: []
-  soSplinePointsLeftClamped: []
-  soSplinePointsRightClamped: []
-  OQQQOODQOC: []
-  ODDCOCQDCQ: []
-  bendAngles: []
-  meshVecs: []
-  meshUVs: []
-  meshUVs2: []
-  surfaceMeshVecs: []
-  leftIndentVecs: []
-  rightIndentVecs: []
-  middleIndentVecs: []
-  leftSurroundingVecs: []
-  rightSurroundingVecs: []
-  leftIndentVecsSV: []
-  rightIndentVecsSV: []
-  bridgeElement: 
-  vecsBelowTerrain: []
-  treeVecs: []
-  detailVecs: []
-  vegetationTris: 
-  vegetationTreeTris: 
-  doLeftSurrounding: 
-  doRightSurrounding: 
-  totalDistance: 0
-  nodeSplinePoint: 
-  totalDistanceString: 
-  startPrefabScript: {fileID: 0}
-  endPrefabScript: {fileID: 0}
-  startConnectionSegment: 0
-  startConnectionFlag: 1
-  endConnectionSegment: 0
-  endConnectionFlag: 1
-  startSegmentIntAdjusted: 0
-  endSegmentIntAdjusted: 0
-  tCrossingConnected: 0
-  roadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
-  roadMaterials:
-  - {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
-  roadPhysicsMaterial: {fileID: 0}
-  roadPhysicsMaterials: []
-  startDir: {x: 0, y: 0, z: 0}
-  endDir: {x: 0, y: 0, z: 0}
-  startAngle: 0
-  endAngle: 0
-  startbendLeftRight: 0
-  endbendLeftRight: 0
-  connectionAdjustDistanceStart: 30
-  connectionAdjustDistanceEnd: 30
-  pivotp: {x: 0, y: 0, z: 0}
-  p1: {x: 0, y: 0, z: 0}
-  p2: {x: 0, y: 0, z: 0}
-  p3: {x: 0, y: 0, z: 0}
-  p4: {x: 0, y: 0, z: 0}
-  p5: {x: 0, y: 0, z: 0}
-  p6: {x: 0, y: 0, z: 0}
-  p7: {x: 0, y: 0, z: 0}
-  cp1: {x: 0, y: 0, z: 0}
-  cp2: {x: 0, y: 0, z: 0}
-  cp3: {x: 0, y: 0, z: 0}
-  cp4: {x: 0, y: 0, z: 0}
-  cp5: {x: 0, y: 0, z: 0}
-  cp6: {x: 0, y: 0, z: 0}
-  cp7: {x: 0, y: 0, z: 0}
-  cp8: {x: 0, y: 0, z: 0}
-  cp9: {x: 0, y: 0, z: 0}
-  cpcenter: {x: 0, y: 0, z: 0}
-  p1Circle: {x: 0, y: 0, z: 0}
-  p2Circle: {x: 0, y: 0, z: 0}
-  cpradius: 0
-  cpangle: 0
-  dp1: {x: 0, y: 0, z: 0}
-  dp2: {x: 0, y: 0, z: 0}
-  dp3: {x: 0, y: 0, z: 0}
-  dp4: {x: 0, y: 0, z: 0}
-  segPoints: []
-  testPoints: []
-  testPoints2: []
-  OODQDQQQDD: {x: 0, y: 0, z: 0}
-  OCCCCQOCOD: {x: 0, y: 0, z: 0}
-  endLeft: {x: 0, y: 0, z: 0}
-  endRight: {x: 0, y: 0, z: 0}
-  testmesh: {fileID: 0}
-  surfaceMesh: {fileID: 0}
-  sv1: {x: 0, y: 0, z: 0}
-  sv2: {x: 0, y: 0, z: 0}
-  prefabIndentLeft: {x: 0, y: 0, z: 0}
-  prefabIndentRight: {x: 0, y: 0, z: 0}
-  roadIndent1: {x: 0, y: 0, z: 0}
-  tmpPerpCP: {x: 0, y: 0, z: 0}
-  tmpCP: {x: 0, y: 0, z: 0}
-  splinePos: 0
-  camHeight: 5
-  camSpeed: 50
-  flyOverPoints: []
-  splinePosV3: {x: 0, y: 0, z: 0}
-  markerDistances: []
-  osmRoadType: 
-  soData: []
-  soDataExt: []
-  sideObjectNames: []
-  selectedSO: 0
-  rebuildSos: 0
-  sosCleared: 0
-  isSideObject: 0
-  startOffsetActiveMarker: -1
-  endOffsetActiveMarker: -1
-  leftToCenterPerc: 0
-  splatMapActive: 0
-  splatIndex: 0
-  expandLevel: 0
-  smoothLevel: 1
-  splatOpacity: 1
-  layer: 0
-  isStatic: 1
-  tag: Untagged
-  tagInt: 0
-  castShadow: 0
-  fadeInFlag: 0
-  fadeInDistance: 0
-  fadeOutFlag: 0
-  fadeOutDistance: 0
-  doSurroundingSurfaces: 1
-  terrainDeformation: 1
-  snapToTerrain: 0
-  soSectionList1: []
-  soSectionList2: []
-  soSectionList3: []
-  soSectionList4: []
-  soSectionList5: []
-  soSectionList6: []
-  soSectionList7: []
-  soSectionList8: []
-  snapVertices: 0
-  snapOffset: 0.01
-  hasMeshCollider: 1
-  isUpdated: 0
-  forceSORefresh: 0
-  QDDDQODQQDQDQQD: 1
-  uv4Type: 0
-  detailDistance: 50
-  startDecalCollapsed: 0
-  startDecal: {fileID: 0}
-  endDecal: {fileID: 0}
-  startDecalPrefab: {fileID: 0}
-  startDecalPrefabSource: {fileID: 0}
-  endDecalCollapsed: 0
-  endDecalPrefab: {fileID: 0}
-  endDecalPrefabSource: {fileID: 0}
-  startDecalID: -1
-  endDecalID: -1
-  lastForward: {x: 0, y: 0, z: 0}
-  roadUpdate: 0
-  bounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  debugVecs: []
-  debugFloats: []
-  exitExtrudeEnd: {x: 0, y: 0, z: 0}
-  exitFixedEnd: {x: 0, y: 0, z: 0}
-  exitSplitEnd: {x: 0, y: 0, z: 0}
-  splatTextureMask: {fileID: 0}
-  lockUVs: 0
-  laneData: []
-  oneWayRoad: 0
-  oneWayDirection: 1
-  laneDirectionObject: {fileID: 0}
-  rotationsAdjustedFlag: 0
-  lastRotationStartInt: 0
-  lastRotationEndInt: 0
-  spawnDirectionMarkings: 1
-  vgData: []
-  centerPivotPointsFlag: 0
-  terrainXStart: 0
-  terrainYStart: 0
-  terrainHMRows: 0
-  terrainHMCols: 0
 --- !u!114 &1933480782 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2502937826917854889, guid: 7ec80c5b4fe7d1040ada97e2c2f7cce2, type: 3}
@@ -32346,6 +31516,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41a9e4f2924047e498f822fc54a2e08f, type: 3}
+--- !u!1001 &6557656416802814840
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2093014594}
+    m_Modifications:
+    - target: {fileID: 7680264843234599, guid: 853c80d1a9a4b8642b5f35ac91e3908f, type: 3}
+      propertyPath: m_Name
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898760594836666042, guid: 853c80d1a9a4b8642b5f35ac91e3908f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.259
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898760594836666042, guid: 853c80d1a9a4b8642b5f35ac91e3908f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898760594836666042, guid: 853c80d1a9a4b8642b5f35ac91e3908f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.24678
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898760594836666042, guid: 853c80d1a9a4b8642b5f35ac91e3908f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898760594836666042, guid: 853c80d1a9a4b8642b5f35ac91e3908f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898760594836666042, guid: 853c80d1a9a4b8642b5f35ac91e3908f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898760594836666042, guid: 853c80d1a9a4b8642b5f35ac91e3908f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898760594836666042, guid: 853c80d1a9a4b8642b5f35ac91e3908f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898760594836666042, guid: 853c80d1a9a4b8642b5f35ac91e3908f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898760594836666042, guid: 853c80d1a9a4b8642b5f35ac91e3908f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 853c80d1a9a4b8642b5f35ac91e3908f, type: 3}
 --- !u!1001 &6842164256755781138
 PrefabInstance:
   m_ObjectHideFlags: 0
