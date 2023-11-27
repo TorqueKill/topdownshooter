@@ -12,8 +12,18 @@ public class Enemy1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.Find("Player").transform;
+        //target = GameObject.Find("Player").transform;
 
+        //check if player is deleted
+        if (GameObject.Find("Player") != null)
+        {
+            target = GameObject.Find("Player").transform;
+        }
+        else
+        {
+            //stop update
+            return;
+        }
     }
 
     // Update is called once per frame
@@ -46,6 +56,8 @@ public class Enemy1 : MonoBehaviour
         {
             // Move the enemy towards the target position
             transform.position = Vector3.Lerp(transform.position, enemyTarget, speed * Time.deltaTime);
+            //also face the player
+            transform.LookAt(target);
         }
     }
 }

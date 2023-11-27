@@ -28,6 +28,9 @@ public class Level0 : MonoBehaviour
     void Start()
     {
         textDelta = 0;
+        //find the LevelText object
+        startTextUI = GameObject.Find("levelText").GetComponent<Text>();
+        //set the text
         startTextUI.text = startText;
         
     }

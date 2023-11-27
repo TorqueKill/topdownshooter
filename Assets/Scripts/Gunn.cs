@@ -30,6 +30,7 @@ public class Gunn : MonoBehaviour
     private float textDelta;
 
     public Text text;
+
     public AudioSource audioName;
 
 
@@ -40,6 +41,8 @@ public class Gunn : MonoBehaviour
 
         //try to find text component
         text = GameObject.Find("levelText").GetComponent<Text>();
+
+    
     }
 
     void Update()

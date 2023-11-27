@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // get character controller component
 
@@ -52,6 +53,9 @@ public class PlayerController : MonoBehaviour
 
     private GameObject weapon2Object;
 
+
+    private Text weaponStatus;
+
     //private GameObject weapon3Object;
 
 
@@ -66,6 +70,13 @@ public class PlayerController : MonoBehaviour
 
         //weapon2 should be child of hand which is child of player
         weapon2Object = transform.Find("Hand").Find("Rocket Launcher").gameObject;
+
+        //find text component
+        weaponStatus = GameObject.Find("weaponStatus").GetComponent<Text>();
+        weaponStatus.text = "Rifle";
+
+        //get mouse/keyboard control from static data
+        mouseKeyboardControl = StaticData.mouseKeyboardControl;
     }
 
     // Update is called once per frame
@@ -282,6 +293,8 @@ public class PlayerController : MonoBehaviour
             weapon1 = true;
             weapon2 = false;
             //weapon3 = false;
+
+            weaponStatus.text = "Rifle";
         }
         // if 2 is pressed, set weapon2 to true and weapon1 and weapon3 to false
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -289,6 +302,8 @@ public class PlayerController : MonoBehaviour
             weapon1 = false;
             weapon2 = true;
             //weapon3 = false;
+
+            weaponStatus.text = "Rocket Launcher";
         }
         // if 3 is pressed, set weapon3 to true and weapon1 and weapon2 to false
         // if (Input.GetKeyDown(KeyCode.Alpha3))

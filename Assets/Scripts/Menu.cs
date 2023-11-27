@@ -8,6 +8,8 @@ public class Menu : MonoBehaviour
 {
     public Button startButton;
 
+    public Button keyboardOnlySelect;
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +18,14 @@ public class Menu : MonoBehaviour
         startButton = GameObject.Find("Start").GetComponent<Button>();
         //add listener to button
         startButton.onClick.AddListener(StartGame);
+
+        //find 'keyboard only' button component
+        keyboardOnlySelect = GameObject.Find("keyboardOnly").GetComponent<Button>();
+        //add listener to button
+        keyboardOnlySelect.onClick.AddListener(KeyboardOnly);
+
+        keyboardOnlySelect.GetComponentInChildren<Text>().text = StaticData.mouseKeyboardControl ? "KeyboardMouse" : "Keyboard Only";
+
 
         
     }
@@ -30,5 +40,13 @@ public class Menu : MonoBehaviour
     {
         //load scene
         SceneManager.LoadScene("SampleScene");
+    }
+
+    void KeyboardOnly()
+    {
+        //flip static bool 'mouseKeyboardControl' and flip state of button
+        StaticData.mouseKeyboardControl = !StaticData.mouseKeyboardControl;
+        keyboardOnlySelect.GetComponentInChildren<Text>().text = StaticData.mouseKeyboardControl ? "KeyboardMouse" : "Keyboard Only";
+        
     }
 }
