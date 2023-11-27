@@ -48,6 +48,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4166899651872782521, guid: 07c26a29ba65d6240983ec9c1a8ab73f, type: 3}
+      propertyPath: RotateLeft
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166899651872782521, guid: 07c26a29ba65d6240983ec9c1a8ab73f, type: 3}
+      propertyPath: RotateRight
+      value: 275
+      objectReference: {fileID: 0}
     - target: {fileID: 4217475974729421007, guid: 07c26a29ba65d6240983ec9c1a8ab73f, type: 3}
       propertyPath: m_Name
       value: Player Variant 3
