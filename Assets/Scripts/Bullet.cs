@@ -34,12 +34,19 @@ public class Bullet : MonoBehaviour
 
         if (shootableLayer == (shootableLayer | (1 << other.gameObject.layer))){
 
-           EntityHurtBox hurtBox = other.GetComponent<EntityHurtBox>();
+            EntityHurtBox hurtBox = other.GetComponent<EntityHurtBox>();
 
-           if (hurtBox != null){
+           //if null check for parent
+            if (hurtBox == null){
+
+            hurtBox = other.GetComponentInParent<EntityHurtBox>();
+            }
+
+
+            if (hurtBox != null){
 
                 hurtBox.entityHealth.health -= damage;
-           }
+            }
 
             Destroy(gameObject);
         }else if (passiveLayer == (passiveLayer | (1 << other.gameObject.layer))){
