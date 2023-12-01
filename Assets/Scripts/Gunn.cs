@@ -33,6 +33,8 @@ public class Gunn : MonoBehaviour
 
     public AudioSource audioName;
 
+    public bool isShotgun = true;
+
 
     void Start()
     {
@@ -59,16 +61,21 @@ public class Gunn : MonoBehaviour
         {
             if (Input.GetKey(shootButton) || Input.GetKey(shootButton2))
             {
-                if (upgrade2)
+                if (isShotgun)
                 {
-                    Shoot3();
-                }
-                else if (upgrade1)
-                {
-                    Shoot2();
-                }
-                else
-                {
+                    if (upgrade2)
+                    {
+                        Shoot3();
+                    }
+                    else if (upgrade1)
+                    {
+                        Shoot3();
+                    }
+                    else
+                    {
+                        Shoot2();
+                    }
+                }else{
                     Shoot1();
                 }
             }
@@ -124,14 +131,37 @@ public class Gunn : MonoBehaviour
         if (!upgrade1){
             if (GameObject.Find("Player").GetComponent<PlayerStats>().kills > level2Kills){
                 upgrade1 = true;
-                text.text = "Gun Upgraded: extra bullets";
+
+                if (isShotgun)
+                {
+                    text.text = "Gun Upgraded: spread";
+                }
+                else
+                {
+                    text.text = "Gun Upgraded: fire rate";
+                    shootInterval = shootInterval / 2;
+                }
+
+
                 textDelta = 0;
             }
         }
         else if (!upgrade2){
             if (GameObject.Find("Player").GetComponent<PlayerStats>().kills > level3Kills){
                 upgrade2 = true;
-                text.text = "Gun Upgraded: extra bullets";
+
+                if (isShotgun)
+                {
+                    text.text = "Gun Upgraded: fire rate";
+                    //increase rate of fire by 50%
+                    shootInterval = shootInterval * 0.75f;
+                }
+                else
+                {
+                    text.text = "Gun Upgraded: fire rate";
+                    shootInterval = shootInterval / 2;
+                }
+
                 textDelta = 0;
             }
         }     

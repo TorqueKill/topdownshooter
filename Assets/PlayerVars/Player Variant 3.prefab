@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2121966529172158508, guid: 07c26a29ba65d6240983ec9c1a8ab73f, type: 3}
+      propertyPath: isShotgun
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3909801020160535103, guid: 07c26a29ba65d6240983ec9c1a8ab73f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3529
@@ -75,6 +79,10 @@ PrefabInstance:
     - target: {fileID: 4217475974729421007, guid: 07c26a29ba65d6240983ec9c1a8ab73f, type: 3}
       propertyPath: m_Name
       value: Player Variant 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247536281733936349, guid: 07c26a29ba65d6240983ec9c1a8ab73f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4912846472917293007, guid: 07c26a29ba65d6240983ec9c1a8ab73f, type: 3}
       propertyPath: m_Enabled

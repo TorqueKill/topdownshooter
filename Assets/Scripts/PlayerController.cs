@@ -46,12 +46,14 @@ public class PlayerController : MonoBehaviour
 
     private bool weapon1 = true;
     private bool weapon2 = false;
-   // private bool weapon3 = false;
+    private bool weapon3 = false;
 
 
     private GameObject weapon1Object;
 
     private GameObject weapon2Object;
+
+    private GameObject weapon3Object;
 
 
     private Text weaponStatus;
@@ -70,6 +72,9 @@ public class PlayerController : MonoBehaviour
 
         //weapon2 should be child of hand which is child of player
         weapon2Object = transform.Find("Hand").Find("Rocket Launcher").gameObject;
+
+        //weapon3 should be child of hand which is child of player
+        weapon3Object = transform.Find("Hand").Find("Shotgun").gameObject;
 
         //find text component
         weaponStatus = GameObject.Find("weaponStatus").GetComponent<Text>();
@@ -292,7 +297,7 @@ public class PlayerController : MonoBehaviour
         {
             weapon1 = true;
             weapon2 = false;
-            //weapon3 = false;
+            weapon3 = false;
 
             weaponStatus.text = "Rifle";
         }
@@ -301,17 +306,19 @@ public class PlayerController : MonoBehaviour
         {
             weapon1 = false;
             weapon2 = true;
-            //weapon3 = false;
+            weapon3 = false;
 
             weaponStatus.text = "Rocket Launcher";
         }
-        // if 3 is pressed, set weapon3 to true and weapon1 and weapon2 to false
-        // if (Input.GetKeyDown(KeyCode.Alpha3))
-        // {
-        //     weapon1 = false;
-        //     weapon2 = false;
-        //     weapon3 = true;
-        // }
+        //if 3 is pressed, set weapon3 to true and weapon1 and weapon2 to false
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            weapon1 = false;
+            weapon2 = false;
+            weapon3 = true;
+
+            weaponStatus.text = "Shotgun";
+        }
 
     }
 
@@ -321,20 +328,20 @@ public class PlayerController : MonoBehaviour
         {
             weapon1Object.SetActive(true);
             weapon2Object.SetActive(false);
-            //weapon3Object.SetActive(false);
+            weapon3Object.SetActive(false);
         }
         else if (weapon2)
         {
             weapon1Object.SetActive(false);
             weapon2Object.SetActive(true);
-            //weapon3Object.SetActive(false);
+            weapon3Object.SetActive(false);
         }
-        // else if (weapon3)
-        // {
-        //     weapon1Object.SetActive(false);
-        //     weapon2Object.SetActive(false);
-        //     weapon3Object.SetActive(true);
-        // }
+        else if (weapon3)
+        {
+            weapon1Object.SetActive(false);
+            weapon2Object.SetActive(false);
+            weapon3Object.SetActive(true);
+        }
     }
 
 

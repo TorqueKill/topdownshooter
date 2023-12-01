@@ -12,6 +12,9 @@ public class EntityHealth : MonoBehaviour
     public Image healthBar;
 
 
+    private GameObject player;
+
+
     new public string tag;
 
     void Start()
@@ -22,6 +25,9 @@ public class EntityHealth : MonoBehaviour
         if (tag == "Player"){
             healthBar = GameObject.Find("green").GetComponent<Image>();
         }
+
+        //set player
+        player = GameObject.Find("Player");
     }
 
     void Update()
@@ -36,7 +42,9 @@ public class EntityHealth : MonoBehaviour
             //add kill to player
             //only add kill if enemy
             if (tag == "ENEMY"){
-                GameObject.Find("Player").GetComponent<PlayerStats>().kills += 1;
+                if (player != null){
+                    player.GetComponent<PlayerStats>().kills += 1;
+                }
             }
         }else {
             if (healthBar != null){
