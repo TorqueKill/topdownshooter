@@ -39,7 +39,7 @@ public class Menu : MonoBehaviour
     void StartGame()
     {
         //load scene
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
     }
 
     void KeyboardOnly()

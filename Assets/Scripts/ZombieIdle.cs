@@ -21,9 +21,6 @@ public class ZombieIdle : MonoBehaviour
 
 
 
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +32,12 @@ public class ZombieIdle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        IdleState();
+        
+    }
+
+    void IdleState(){
         //if the idle time is greater than 0
         if (mIdleTime > 0)
         {
@@ -63,10 +66,6 @@ public class ZombieIdle : MonoBehaviour
                 setIdle();
             }
         }
-
-        //print the idle time and walk time to the console
-        //Debug.Log("Idle Time: " + mIdleTime + " Walk Time: " + mWalkTime);
-        
     }
 
     //declare a function called setIdle that randomly sets the idle time

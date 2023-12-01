@@ -8,6 +8,14 @@ public class Enemy1 : MonoBehaviour
     public LayerMask collisionLayer;
     public float speed;
 
+    public float aggroRange = 25f; //distance at which enemy will start following player
+
+    public float attackRange = 5f; //distance at which enemy will attack player
+
+    public bool isFollowing = false;
+
+    public bool isAttacking = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +40,31 @@ public class Enemy1 : MonoBehaviour
 
         //check if player is deleted
         if (target == null)
-        {
+        {   
+            isAttacking = false;
+            isFollowing = false;
+
             //stop update
             return;
+        }
+
+        //return if player is too far away
+        if (Vector3.Distance(transform.position, target.position) > aggroRange)
+        {
+            isFollowing = false;
+            return;
+        }
+
+        isFollowing = true;
+
+        //check if player is close enough to attack
+        if (Vector3.Distance(transform.position, target.position) < attackRange)
+        {
+            isAttacking = true;
+        }
+        else
+        {
+            isAttacking = false;
         }
 
 
