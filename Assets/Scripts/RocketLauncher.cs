@@ -32,6 +32,8 @@ public class RocketLauncher : MonoBehaviour
 
     public AudioSource audioName;
 
+    private ParticleSystem shootParticles;
+
 
     void Start()
     {
@@ -39,6 +41,10 @@ public class RocketLauncher : MonoBehaviour
         shootDelta = shootInterval;
 
         text.text = "";
+
+        audioName.time = 0.9f;
+
+        shootParticles = transform.GetChild(1).gameObject.GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -57,6 +63,11 @@ public class RocketLauncher : MonoBehaviour
             if (Input.GetKey(shootButton) || Input.GetKey(shootButton2))
             {
                 Shoot1();
+
+                //setactive shoot particles
+                shootParticles.gameObject.SetActive(true);
+
+                shootParticles.Play();
             }
             shootDelta = 0;
         }
@@ -76,6 +87,7 @@ public class RocketLauncher : MonoBehaviour
     {
         if (audioName != null)
         {
+            audioName.time = 0.9f;
             audioName.Play();
         }
     }
@@ -91,6 +103,10 @@ public class RocketLauncher : MonoBehaviour
                 upgrade1 = true;
                 text.text = "Rocket Upgraded: Increased fire rate";
                 textDelta = 0;
+
+                //increase playback speed
+                audioName.pitch = 1.2f;
+
             }
         }
         else if (!upgrade2){
@@ -102,6 +118,10 @@ public class RocketLauncher : MonoBehaviour
                 upgrade2 = true;
                 text.text = "Rocket Upgraded: Increased fire rate";
                 textDelta = 0;
+
+                //increase playback speed
+                audioName.pitch = 1.6f;
+
             }
         }
     }

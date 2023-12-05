@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     // create variables
     public float speed = 5;
-    public float turnSpeed = 10;
+    public float turnSpeed = 20;
     public float runSpeed = 10;
 
     public float rotateSpeed = 10;
@@ -169,9 +169,27 @@ public class PlayerController : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         //get mouse pos
-        Vector3 mousePos = Input.mousePosition;
-        //get world pos
-        Vector3 worldPos = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.transform.position.y - transform.position.y));
+        // Vector3 mousePos = Input.mousePosition;
+        // //get world pos
+        // Vector3 worldPos = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.transform.position.y - transform.position.y));
+
+
+        // // if (_direction.magnitude > 0)
+        // // {
+        // //     transform.LookAt(worldPos);
+        // //     _targetRotation = Quaternion.LookRotation(_direction);
+        // //     transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, Time.deltaTime * turnSpeed);
+        // // }
+        // // else
+        // // {
+        // //     transform.LookAt(worldPos);
+        // //     // _targetRotation = Quaternion.LookRotation(_direction);
+        // //     // transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, Time.deltaTime * turnSpeed);
+        // // }
+
+        // transform.LookAt(worldPos);
+        // _targetRotation = Quaternion.LookRotation(_direction - new Vector3(transform.position.x, 0, transform.position.z));
+        // transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, Time.deltaTime * turnSpeed);
 
 
         // move the player
@@ -185,21 +203,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             _controller.Move(_direction * speed * Time.deltaTime);
-        }
-
-        // rotate the player
-
-        if (_direction.magnitude > 0)
-        {
-            transform.LookAt(worldPos);
-            _targetRotation = Quaternion.LookRotation(_direction);
-            transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, Time.deltaTime * turnSpeed);
-        }
-        else
-        {
-            transform.LookAt(worldPos);
-            // _targetRotation = Quaternion.LookRotation(_direction);
-            // transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, Time.deltaTime * turnSpeed);
         }
 
 

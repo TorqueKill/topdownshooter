@@ -11,6 +11,17 @@ public class Bullet : MonoBehaviour
     public LayerMask shootableLayer; // could be a list of layers
     public LayerMask passiveLayer;
 
+    private ParticleSystem blast;
+
+    void Start()
+    {
+        //first get child gameObject called 'explosion'
+        blast = transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
+
+        //set blast to inactive
+        blast.gameObject.SetActive(false);
+    }
+
 
     void Awake()
     {
@@ -48,10 +59,26 @@ public class Bullet : MonoBehaviour
                 hurtBox.entityHealth.health -= damage;
             }
 
-            Destroy(gameObject);
+            //set velocity to zero
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+            //activate blast
+            blast.gameObject.SetActive(true);
+            blast.Play();
+
+            //disable mesh renderer of self
+            GetComponent<MeshRenderer>().enabled = false;
         }else if (passiveLayer == (passiveLayer | (1 << other.gameObject.layer))){
 
-            Destroy(gameObject);
+            //set velocity to zero
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+            //activate blast
+            blast.gameObject.SetActive(true);
+            blast.Play();
+
+            //disable mesh renderer of self
+            GetComponent<MeshRenderer>().enabled = false;
         }
         //Destroy(collision.gameObject);
         //Destroy(gameObject);
