@@ -123,6 +123,65 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &78564868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 78564870}
+  - component: {fileID: 78564869}
+  m_Layer: 0
+  m_Name: CutSceneController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &78564869
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78564868}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 83a15619d045b43cbaad1150b8bfe8e2, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -3654278819401957070, guid: 137ee0bfde08c4f47a842807daf56468, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 3782054963514882427, guid: 137ee0bfde08c4f47a842807daf56468, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5168825727601700063, guid: 137ee0bfde08c4f47a842807daf56468, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5862049567036709662, guid: 83a15619d045b43cbaad1150b8bfe8e2, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 4719872039989312048, guid: 83a15619d045b43cbaad1150b8bfe8e2, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
+--- !u!4 &78564870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78564868}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 299.5307, y: 246.44298, z: 6.3841248}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &408024964
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,3 +1017,4 @@ SceneRoots:
   - {fileID: 1701654819}
   - {fileID: 1376933397}
   - {fileID: 408024967}
+  - {fileID: 78564870}

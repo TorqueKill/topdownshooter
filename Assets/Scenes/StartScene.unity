@@ -710,7 +710,7 @@ GameObject:
   - component: {fileID: 1005874369}
   - component: {fileID: 1005874370}
   m_Layer: 0
-  m_Name: Timeline
+  m_Name: EarthTimeline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
