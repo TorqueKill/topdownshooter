@@ -17,4 +17,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 7bfdfcf3e562e764080ec81602c0d703
+  - enabled: 1
+    path: Assets/Scenes/CutScene.unity
+    guid: 0cd52f18c6efa44aea79d451e9f8b576
+  - enabled: 1
+    path: Assets/Scenes/RealStory.unity
+    guid: e93888995d4c54fe29e3fe9849694047
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 94352d0e1cc3c407e8609146c20a0869
+  - enabled: 1
+    path: Assets/Scenes/destroyed buildings.unity
+    guid: 4141bbde47c334d3a9bb346209ddc615
+  - enabled: 1
+    path: Assets/Scenes/particles.unity
+    guid: d798afe98fc4c45a8a9fdaa2c0e99275
   m_configObjects: {}
