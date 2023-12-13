@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4858,15 +4858,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2692637676079037192, guid: b6119bd36da272640b73a9cdbef80aa1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2692637676079037192, guid: b6119bd36da272640b73a9cdbef80aa1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2692637676079037192, guid: b6119bd36da272640b73a9cdbef80aa1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2692637676079037192, guid: b6119bd36da272640b73a9cdbef80aa1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4887,8 +4887,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1711427420323182832, guid: b6119bd36da272640b73a9cdbef80aa1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1321526148}
   m_SourcePrefab: {fileID: 100100000, guid: b6119bd36da272640b73a9cdbef80aa1, type: 3}
+--- !u!1 &1321526147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1711427420323182832, guid: b6119bd36da272640b73a9cdbef80aa1, type: 3}
+  m_PrefabInstance: {fileID: 1321526146}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1321526148
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321526147}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1327827283
 PrefabInstance:
   m_ObjectHideFlags: 0
