@@ -1,0 +1,11 @@
+Model Information:
+* title:	Welcome to Aleppo
+* source:	https://sketchfab.com/3d-models/welcome-to-aleppo-8b7efbe144f34c8297e1f2ba8836f89b
+* author:	NNihad (https://sketchfab.com/NNihad)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Welcome to Aleppo" (https://sketchfab.com/3d-models/welcome-to-aleppo-8b7efbe144f34c8297e1f2ba8836f89b) by NNihad (https://sketchfab.com/NNihad) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
