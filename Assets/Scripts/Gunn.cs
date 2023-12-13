@@ -31,9 +31,16 @@ public class Gunn : MonoBehaviour
 
     public Text text;
 
-    public AudioSource audioName;
+    public AudioSource ShootSound;
 
     public bool isShotgun = true;
+
+    private float AudioDelta = 0.0f;
+    private float AudioInterval = 0.0f;
+
+    private float MaxAudioInterval = 0.001f;
+
+    private ParticleSystem shootParticles;
 
 
     void Start()
@@ -43,6 +50,8 @@ public class Gunn : MonoBehaviour
 
         //try to find text component
         text = GameObject.Find("levelText").GetComponent<Text>();
+
+        shootParticles = transform.GetChild(1).gameObject.GetComponent<ParticleSystem>();
 
     
     }
@@ -66,17 +75,22 @@ public class Gunn : MonoBehaviour
                     if (upgrade2)
                     {
                         Shoot3();
+                        shootParticle();
                     }
                     else if (upgrade1)
                     {
                         Shoot3();
+                        shootParticle();
                     }
                     else
                     {
                         Shoot2();
+                        shootParticle();
+
                     }
                 }else{
                     Shoot1();
+                    shootParticle();
                 }
             }
             shootDelta = 0;
@@ -87,7 +101,16 @@ public class Gunn : MonoBehaviour
     {
         var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
         bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
-        PlayAudio();
+
+        if (AudioDelta < AudioInterval)
+        {
+            AudioDelta += Time.deltaTime;
+        }
+        else
+        {
+            PlayAudio();
+            AudioDelta = 0;
+        }
 
     }
 
@@ -116,14 +139,18 @@ public class Gunn : MonoBehaviour
         var bullet5 = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.Euler(0, -spreadAngle * 2, 0) * bulletSpawnPoint.rotation);
         bullet5.GetComponent<Rigidbody>().velocity = bullet5.transform.forward * bulletSpeed;
 
-        PlayAudio();
+        //PlayAudio();
     }
 
     public void PlayAudio()
     {
-        if (audioName != null)
+        if (ShootSound != null)
         {
-            audioName.Play();
+            if (isShotgun)
+            {
+                ShootSound.time = 0.8f;
+            }
+            ShootSound.Play();
         }
     }
 
@@ -135,11 +162,15 @@ public class Gunn : MonoBehaviour
                 if (isShotgun)
                 {
                     text.text = "Gun Upgraded: spread";
+                    ShootSound.time = 0.8f;
                 }
                 else
                 {
                     text.text = "Gun Upgraded: fire rate";
                     shootInterval = shootInterval / 2;
+
+                    //increase audio rate by 50%
+                    AudioInterval = MaxAudioInterval;
                 }
 
 
@@ -155,11 +186,18 @@ public class Gunn : MonoBehaviour
                     text.text = "Gun Upgraded: fire rate";
                     //increase rate of fire by 50%
                     shootInterval = shootInterval * 0.75f;
+
+                    //increase audio rate by 50%
+                    ShootSound.pitch = 1.5f;
+                    
                 }
                 else
                 {
                     text.text = "Gun Upgraded: fire rate";
                     shootInterval = shootInterval / 2;
+
+                    //increase audio rate by 50%
+                    AudioInterval = MaxAudioInterval * 0.75f;
                 }
 
                 textDelta = 0;
@@ -177,6 +215,16 @@ public class Gunn : MonoBehaviour
         else
         {
             text.text = "";
+        }
+    }
+
+    void shootParticle()
+    {
+        if (shootParticles != null)
+        {
+            //setactive shoot particles
+            shootParticles.gameObject.SetActive(true);
+            shootParticles.Play();
         }
     }
 }

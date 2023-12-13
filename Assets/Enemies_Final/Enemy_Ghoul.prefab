@@ -125,8 +125,8 @@ Transform:
   m_GameObject: {fileID: 2830260191405112292}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -71.42018, y: 2.55, z: 46.51541}
-  m_LocalScale: {x: 1, y: 0.70710206, z: 0.50085384}
+  m_LocalPosition: {x: -71.42018, y: 3.52, z: 46.398}
+  m_LocalScale: {x: 1, y: 1.0824318, z: 0.71471846}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 946109509235400542}
@@ -149,7 +149,7 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 4224
-  speed: 5
+  speed: 3
   aggroRange: 50
   attackRange: 5
   isFollowing: 0
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e4064fe4ab8a34f8071d70c0f358ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
   maxHealth: 100
   healthRegen: 0
   healthBar: {fileID: 0}
